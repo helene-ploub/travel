@@ -11,6 +11,19 @@
         background-position: center; /* Pour centrer l'image */
         height: 100vh; /* Pour que le body prenne toute la hauteur de la fenêtre */
         margin: 0; /* Pour enlever les marges par défaut */
+        .social-icons {
+            position: fixed;
+            left: 20px; /* Distance depuis la gauche */
+            top: 50%; /* Centre verticalement */
+            transform: translateY(-50%); /* Ajuste le centrage vertical */
+            display: flex;
+            flex-direction: column; /* Aligne verticalement */
+            gap: 20px; /* Espace entre les icônes */
+        }
+
+        .social-icons img {
+            width: 40px; /* Taille des icônes */
+        }
     }
 </style>
 </head>
@@ -30,13 +43,14 @@
         </nav>
     <h1>EXPLORE DREAM DESTINATION</h1>
     <h2>You can travel everywhere and enjoy yourself!</h2>
-    <h1>Follow us on social network</h1>
-    <a href="https://www.facebook.com" target="_blank">
-        <i class="fab fa-facebook"></i>
-    </a>
-    <a href="https://www.instagram.com" target="_blank">
-        <i class="fab fa-instagram"></i>
-    </a>
+    
+    <div class="social-icons">
+        <img src="./facebook_icon.png" alt="Facebook">
+        <img src="./instagram_icon.png" alt="Instagram">
+        <img src="./twitter_icon.png" alt="Twitter">
+    </div>
+
+
 
 
 </body>
