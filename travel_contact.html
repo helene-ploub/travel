@@ -20,24 +20,33 @@
           <li><a href="./travel_recommendation.html" id="home">Home </a></li>
           <li><a href="./travel_contact.html" id="contact">Contact Us </a></li>
           <li><a href="./about_us.html" id="about">About Us </a></li>
-          <li><input type="text" id="destinationInput" placeholder="Enter a destination or keyword">  </li>
-          <li><button id='btnSearch'>Search</button>
-          <li><button id='btnReset'>Reset</button>
-
+          
           </li>
     
         </ul>
         </nav>
-    <h1>EXPLORE DREAM DESTINATION</h1>
-    <h2>You can travel everywhere and enjoy yourself!</h2>
-    <h1>Follow us on social network</h1>
-    <a href="https://www.facebook.com" target="_blank">
-        <i class="fab fa-facebook"></i>
-    </a>
-    <a href="https://www.instagram.com" target="_blank">
-        <i class="fab fa-instagram"></i>
-    </a>
+    <h1>Contact Us</h1>
+    <p>Get in touch</p>
 
-
+    <form id="contactForm">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit" onclick="thankyou()">Submit</button>
+    </form>
+    <script>
+    function thankyou(){
+        alert('Thank you for contacting us!')
+    }
+  </script>
 </body>
 </html>
