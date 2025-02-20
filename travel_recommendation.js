@@ -1,4 +1,5 @@
 const btnSearch = document.getElementById('btnSearch');
+const btnClear = document.getElementById('btnReset');
 
 
 function searchCondition() {
@@ -10,6 +11,8 @@ function searchCondition() {
       .then(response => response.json())
       .then(data => {
         const country = data.countries.find(item => item.name.toLowerCase() === input);
+        const temple = data.temples.find(item => item.name.toLowerCase() === input);
+        const beach = data.beaches.find(item => item.name.toLowerCase() === input);
 
         if (country) {
           country.cities.forEach(city => {
@@ -19,8 +22,17 @@ function searchCondition() {
               <p><strong>Description:</strong> ${city.description}</p>
             `;
           });
-        } else {
-          resultDiv.innerHTML = 'Condition not found.';
+        } else if (temple) {
+            resultDiv.innerHTML += `<h2>${temple.name}</h2>`;
+            resultDiv.innerHTML += `<img src="${temple.imageUrl}" alt="${temple.name}">`;
+            resultDiv.innerHTML += `<p><strong>Description:</strong> ${temple.description}</p>`; // Ajout du backtick ici
+        } else if (beach) {
+            resultDiv.innerHTML += `<h2>${beach.name}</h2>`;
+            resultDiv.innerHTML += `<img src="${beach.imageUrl}" alt="${beach.name}">`;
+            resultDiv.innerHTML += `<p><strong>Description:</strong> ${beach.description}</p>`; // Ajout du backtick ici
+        }         
+        else {
+          resultDiv.innerHTML = 'Sorry, this destination is not comprised in our catalog.';
         }
       })
       .catch(error => {
@@ -31,3 +43,11 @@ function searchCondition() {
 
 btnSearch.addEventListener('click', searchCondition);
 
+function resetSearch() {
+    const resultDiv = document.getElementById('result');
+    const inputField = document.getElementById('destinationInput');
+    resultDiv.innerHTML = ''; // Vide le contenu de resultDiv
+    inputField.value = ''; // Réinitialise le champ de saisie
+}
+
+btnClear.addEventListener('click', resetSearch);
