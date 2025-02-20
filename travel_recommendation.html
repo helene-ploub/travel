@@ -7,40 +7,42 @@
   <style>
     body {
         background-image: url('./travel.jpg');
-        background-size: cover; /* Pour couvrir tout l'écran */
-        background-position: center; /* Pour centrer l'image */
-        height: 100vh; /* Pour que le body prenne toute la hauteur de la fenêtre */
-        margin: 0; /* Pour enlever les marges par défaut */
-        .social-icons {
-            position: fixed;
-            left: 20px; /* Distance depuis la gauche */
-            top: 50%; /* Centre verticalement */
-            transform: translateY(-50%); /* Ajuste le centrage vertical */
-            display: flex;
-            flex-direction: column; /* Aligne verticalement */
-            gap: 20px; /* Espace entre les icônes */
-        }
-
-        .social-icons img {
-            width: 40px; /* Taille des icônes */
-        }
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
     }
-</style>
+
+    .social-icons {
+        position: fixed;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .social-icons img {
+        width: 40px;
+    }
+  </style>
 </head>
 <body>
-    <nav><h1>TravelDream</h1>
+    <nav>
+        <h1>TravelDream</h1>
         <ul>
-          <li><a href="./travel_recommendation.html" id="home">Home </a></li>
-          <li><a href="./travel_contact.html" id="contact">Contact Us </a></li>
-          <li><a href="./about_us.html" id="about">About Us </a></li>
-          <li><input type="text" id="destinationInput" placeholder="Enter a destination or keyword">  </li>
-          <li><button id='btnSearch'>Search</button>
-          <li><button id='btnReset'>Reset</button>
-
-          </li>
-    
+          <li><a href="./travel_recommendation.html" id="home">Home</a></li>
+          <li><a href="./travel_contact.html" id="contact">Contact Us</a></li>
+          <li><a href="./about_us.html" id="about">About Us</a></li>
+          <li><input type="text" id="destinationInput" placeholder="Enter a destination or keyword"></li>
+          <li><button id='btnSearch'>Search</button></li>
+          <li><button id='btnReset'>Reset</button></li>
         </ul>
-        </nav>
+    </nav>
+    <div class="searchCondition">
+        <div id="result"></div>
+    </div>
     <h1>EXPLORE DREAM DESTINATION</h1>
     <h2>You can travel everywhere and enjoy yourself!</h2>
     
@@ -49,9 +51,8 @@
         <img src="./instagram_icon.png" alt="Instagram">
         <img src="./twitter_icon.png" alt="Twitter">
     </div>
-
-
-
-
+    <script src="./travel_recommendation.js"></script>
 </body>
 </html>
+
+
