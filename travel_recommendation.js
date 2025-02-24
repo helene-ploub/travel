@@ -13,19 +13,16 @@ function searchCondition() {
         const beach = data.beaches.find(item => item.name.toLowerCase() === input);
 
         if (input.includes("temple")) {
-            const templesFound = data.temples.filter(t => t.name.toLowerCase().includes(input));
-            if (templesFound.length > 0) {
-                templesFound.forEach(foundTemple => {
-                    resultDiv.innerHTML += `
-                    <h2>${foundTemple.name}</h2>
-                    <img src="${foundTemple.imageUrl}" alt="${foundTemple.name}">
-                    <p><strong>Description:</strong> ${foundTemple.description}</p>
-                    `;
-                });
-            } else {
-                resultDiv.innerHTML = 'No temples found matching your search.';
-            }
-        } else if (country) {
+            data.temples.forEach(foundTemple => {
+                resultDiv.innerHTML += `
+                <h2>${foundTemple.name}</h2>
+                <img src="${foundTemple.imageUrl}" alt="${foundTemple.name}">
+                <p><strong>Description:</strong> ${foundTemple.description}</p>
+                `;
+            });
+
+        } 
+        else if (country) {
             country.cities.forEach(city => {
                 resultDiv.innerHTML += `
                 <h2>${city.name}</h2>
@@ -34,18 +31,14 @@ function searchCondition() {
                 `;
             });
         } else if (input.includes("beach")) {
-            const beachesFound = data.beaches.filter(b => b.name.toLowerCase().includes(input));
-            if (beachesFound.length > 0) {
-                beachesFound.forEach(foundBeach => {
+                data.beaches.forEach(foundBeach => {
                     resultDiv.innerHTML += `
                     <h2>${foundBeach.name}</h2>
                     <img src="${foundBeach.imageUrl}" alt="${foundBeach.name}">
                     <p><strong>Description:</strong> ${foundBeach.description}</p>
                     `;
                 });
-            } else {
-                resultDiv.innerHTML = 'No beaches found matching your search.';
-            }
+            
         } else {
             resultDiv.innerHTML = 'Sorry, this destination is not comprised in our catalog.';
         }
